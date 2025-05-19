@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>納品管理画面</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #000;
+            height: 60px;
+        }
+        .title {
+            width: 200px;
+            padding: 0 10px;
+            border-right: 1px solid #000;
+            font-size: 20px;
+        }
+        .breadcrumb {
+            flex: 1;
+            padding: 0 10px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .menu {
+            width: 80px;
+            padding: 0 10px;
+            border-left: 1px solid #000;
+            text-align: center;
+        }
+        .menu-icon {
+            font-size: 20px;
+        }
+        .nav-buttons a {
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+        .button {
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #000;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="title">納品管理画面</div>
+    <div class="breadcrumb">
+        <span>🏠 ホーム &gt; 納品管理画面</span>
+        <div class="nav-buttons">
+            <a href="./index.html">⬅️</a>
+            <a href="./index.html">➡️</a>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="menu-icon">≡<br><small>MENU</small></div>
+    </div>
+</header>
+
+<main>
+    <div class="button-container">
+        <div class="button">納品書作成</div>
+        <div class="button">納品書一覧</div>
+    </div>
+</main>
+
+</body>
+</html>
