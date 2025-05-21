@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>注文書編集</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 40px;
+    }
+
+    .breadcrumbs {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .panel {
+      border: 2px solid #000;
+      padding: 20px;
+    }
+
+    .order-title {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .order-info {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .customer {
+      text-align: left;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    .customer-input {
+      border: none;
+      border-bottom: 2px solid #000;
+      font-size: 16px;
+      width: auto;
+      min-width: 80px;
+      max-width: 160px;
+      outline: none;
+      background: transparent;
+      margin-right: 0;
+      vertical-align: baseline;
+      padding-right: 0;
+    }
+
+    .note {
+      font-size: 12px;
+      margin-left: 5px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 4px;
+      text-align: center;
+    }
+
+    input[type="text"], input[type="number"] {
+      width: 90%;
+    }
+
+    .row-num {
+      width: 30px;
+    }
+
+    .footer-note {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .update-button {
+      margin-top: 20px;
+      display: block;
+      margin-left: auto;
+      padding: 6px 20px;
+    }
+
+    .footer-note-area {
+      width: 100%;
+      min-height: 80px;
+      border: 1px solid #000;
+      box-sizing: border-box;
+      font-size: 14px;
+      margin-top: 4px;
+      resize: vertical;
+    }
+
+    /* 追加（任意で見た目調整） */
+    .order-date-input {
+      font-size: 16px;
+      padding: 2px 6px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- パンくずリスト -->
+  <div class="breadcrumbs">🏠 ホーム > 受注管理画面 > 注文書編集</div>
+
+  <!-- メインパネル -->
+  <div class="panel">
+
+    <div class="order-title">注文書</div>
+
+    <div class="order-info">
+      <div></div>
+      <div>
+        <input type="date" name="order_date" class="order-date-input">
+      </div>
+      <div>No.2023100001</div>
+    </div>
+
+    <!-- 顧客名入力欄 -->
+    <div class="customer">
+      <input type="text" name="customer_name" class="customer-input" placeholder="お客様名" maxlength="10" size="10">様
+    </div>
+    <div class="note">※下記のとおり御注文申し上げます</div>
+
+    <!-- 注文表 -->
+    <table>
+      <thead>
+        <tr>
+          <th class="row-num empty-cell"></th>
+          <th>品名</th>
+          <th>数量</th>
+          <th>単価</th>
+          <th>摘要</th>
+          <th>納品済</th>
+          <th>キャンセル</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="row-num">1</td>
+          <td><input type="text" name="item1_name"></td>
+          <td><input type="number" name="item1_quantity"></td>
+          <td>
+            <input type="number" name="item1_price" class="price-input" min="0" step="1">
+            <span class="yen-unit">円</span>
+          </td>
+          <td><input type="text" name="item1_note"></td>
+          <td><input type="checkbox" name="item1_delivered"></td>
+          <td><input type="checkbox" name="item1_canceled"></td>
+        </tr>
+        <tr>
+          <td class="row-num">2</td>
+          <td><input type="text" name="item2_name"></td>
+          <td><input type="number" name="item2_quantity"></td>
+          <td>
+            <input type="number" name="item2_price" class="price-input" min="0" step="1">
+            <span class="yen-unit">円</span>
+          </td>
+          <td><input type="text" name="item2_note"></td>
+          <td><input type="checkbox" name="item2_delivered"></td>
+          <td><input type="checkbox" name="item2_canceled"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 備考欄 -->
+    <div class="footer-note">備考</div>
+    <textarea class="footer-note-area"></textarea>
+
+    <!-- 更新ボタン -->
+    <button class="update-button">更新</button>
+
+  </div>
+
+</body>
+</html>
